@@ -84,6 +84,11 @@ class BlockJITTask extends JITCompiler.Task {
     }
 
     @Override
+    protected String getSourceFile() {
+        return body.getFile(); // TODO detect eval - or do we just not care it ending up on the same CL?
+    }
+
+    @Override
     protected void logJitted() {
         logImpl("block done jitting");
     }
